@@ -15,30 +15,32 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
     override func spec() {
         describe("MenuCategoriesTableViewControllerTests") {
             var subject: MenuCategoriesTableViewController!
+            var mockIndicator: MockProgressIndicator!
+            var mockViewModel: MockMenuCategoriesViewModel!
             
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 subject = storyboard.instantiateViewController(withIdentifier: "MenuCategoriesTableViewController") as? MenuCategoriesTableViewController
+                
+                mockIndicator = MockProgressIndicator()
+                subject.progressIndicator = mockIndicator
+                mockViewModel = MockMenuCategoriesViewModel()
+                subject.viewModel = mockViewModel
             }
             
             it("uses the global progress indicator") {
+                subject = MenuCategoriesTableViewController()
                 expect(subject.progressIndicator).to(beIdenticalTo(GlobalProgressIndicator.shared))
             }
             
             describe("view did load") {
                 it("shows the progress indicator") {
-                    let mockIndicator = MockProgressIndicator()
-                    subject.progressIndicator = mockIndicator
-                    
                     _ = subject.view
                     
-                    expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.showWithStatus, withParameter: "Loading Categories"))
+                    expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.showWithStatus, withParameter: "Loading Menu"))
                 }
                 
                 it("calls into the view model for making the Category call") {
-                    let mockViewModel = MockMenuCategoriesViewModel()
-                    subject.viewModel = mockViewModel
-                    
                     _ = subject.view
                     
                     expect(mockViewModel).to(invoke(MockMenuCategoriesViewModel.InvocationKeys.loadCategories))
@@ -48,9 +50,9 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
             describe("number of rows in section") {
                 it("returns the number of menu categories that the view model contains") {
                     subject.viewModel.categories = [
-                        MenuCategory(categoryName: "", imageName: ""),
-                        MenuCategory(categoryName: "", imageName: ""),
-                        MenuCategory(categoryName: "", imageName: "")
+                        MenuCategory(categoryName: "", menuItems: []),
+                        MenuCategory(categoryName: "", menuItems: []),
+                        MenuCategory(categoryName: "", menuItems: [])
                     ]
                     
                     let count = subject.tableView(subject.tableView, numberOfRowsInSection: 0)
@@ -65,8 +67,8 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                     let expectedCell2Text = "Other Name"
                     
                     subject.viewModel.categories = [
-                        MenuCategory(categoryName: expectedCell1Text, imageName: ""),
-                        MenuCategory(categoryName: expectedCell2Text, imageName: "")
+                        MenuCategory(categoryName: expectedCell1Text, menuItems: []),
+                        MenuCategory(categoryName: expectedCell2Text, menuItems: [])
                     ]
                     
                     let cell1 = subject.tableView(subject.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
@@ -78,11 +80,12 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
             }
             
             describe("menu categories loaded successfully") {
+                var mockTableView: MockUITableView!
                 beforeEach {
-                    let mockViewModel = MockMenuCategoriesViewModel()
-                    subject.viewModel = mockViewModel
+                    mockTableView = MockUITableView()
+                    subject.tableView = mockTableView
                     
-                    _ = subject.view
+                    subject.viewDidLoad()
                     
                     let successBlock: (()->Void)? = mockViewModel.parameter(for: MockMenuCategoriesViewModel.InvocationKeys.loadCategories, atParameterIndex: 0)
                     
@@ -90,11 +93,11 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                 }
                 
                 it("dismisses the progress indicator") {
-                    
+                    expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.dismiss))
                 }
                 
                 it("reloads the table view") {
-                    
+                    expect(mockTableView).to(invoke(MockUITableView.InvocationKeys.reloadData))
                 }
             }
             
@@ -111,7 +114,7 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                 }
                 
                 it("dismisses the progress indicator") {
-                    
+                    expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.dismiss))
                 }
                 
                 it("does something with the failure message") {

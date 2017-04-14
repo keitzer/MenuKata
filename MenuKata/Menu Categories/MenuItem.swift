@@ -1,5 +1,5 @@
 //
-//  MenuCategory.swift
+//  MenuItem.swift
 //  MenuKata
 //
 //  Created by Alex Ogorek on 4/13/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MenuCategory: Equatable {
+struct MenuItem: Equatable {
     /// Returns a Boolean value indicating whether two values are equal.
     ///
     /// Equality is the inverse of inequality. For any values `a` and `b`,
@@ -17,10 +17,14 @@ struct MenuCategory: Equatable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ==(lhs: MenuCategory, rhs: MenuCategory) -> Bool {
-        return lhs.categoryName == rhs.categoryName && lhs.menuItems == rhs.menuItems
+    static func ==(lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return lhs.itemName == rhs.itemName
+            && lhs.imageName == rhs.imageName
+            && lhs.price == rhs.price
+        
     }
-
-    var categoryName: String
-    var menuItems: [MenuItem]
+    
+    var itemName: String
+    var imageName: String
+    var price: Int
 }

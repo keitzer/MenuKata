@@ -54,8 +54,8 @@ class MenuCategoriesViewModelTests: QuickSpec {
                         let successBlock: (([MenuCategory]) -> Void)? = mockClient.parameter(for: MockAPIClient.InvocationKeys.loadCategories, atParameterIndex: 0)
                         
                         let expectedList = [
-                            MenuCategory(categoryName: "Name 1", imageName: "Image 1"),
-                            MenuCategory(categoryName: "Name 2", imageName: "Image 2")
+                            MenuCategory(categoryName: "Name 1", menuItems: [MenuItem(itemName: "Item", imageName: "", price: 1)]),
+                            MenuCategory(categoryName: "Name 2", menuItems: [MenuItem(itemName: "Item2", imageName: "", price: 1)])
                         ]
                         
                         successBlock?(expectedList)

@@ -17,16 +17,17 @@ class MenuCategoriesTableViewController: UITableViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
         
-        progressIndicator.show(with: "Loading Categories")
+        progressIndicator.show(with: "Loading Menu")
         viewModel.loadCategories(withSuccess: categoriesLoaded, withFail: categoriesFailed)
     }
     
     private func categoriesLoaded() {
-        
+        progressIndicator.dismiss()
+        tableView.reloadData()
     }
     
     private func categoriesFailed(withMessage message: String) {
-        
+        progressIndicator.dismiss()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
