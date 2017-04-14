@@ -26,7 +26,7 @@ class SVProgressHUDWrapperTests: QuickSpec {
             it("showWithStatus shows the progress HUD") {
                 ProgressIndicator.shared.show(with: "Some status")
                 
-                expect(SVProgressHUD.isVisible()).to(beTrue())
+                expect(SVProgressHUD.isVisible()).toEventually(beTrue())
             }
             
             it("dismiss hides the progress HUD") {
@@ -34,7 +34,7 @@ class SVProgressHUDWrapperTests: QuickSpec {
                 
                 ProgressIndicator.shared.dismiss()
                 
-                expect(SVProgressHUD.isVisible()).to(beFalse())
+                expect(SVProgressHUD.isVisible()).toEventually(beFalse())
             }
         }
     }
