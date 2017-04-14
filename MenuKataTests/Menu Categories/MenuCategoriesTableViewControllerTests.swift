@@ -17,11 +17,12 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
             var subject: MenuCategoriesTableViewController!
             var mockIndicator: MockProgressIndicator!
             var mockViewModel: MockMenuCategoriesViewModel!
+            var mockNavController: MockUINavigationController!
             
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 subject = storyboard.instantiateViewController(withIdentifier: "MenuCategoriesTableViewController") as? MenuCategoriesTableViewController
-                _ = UINavigationController(rootViewController: subject)
+                mockNavController = MockUINavigationController(rootViewController: subject)
                 
                 mockIndicator = MockProgressIndicator()
                 subject.progressIndicator = mockIndicator
@@ -95,15 +96,20 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                         MenuCategory(categoryName: "", menuItems: expectedItemList)
                     ]
                     
+                    _ = subject.view
+                    mockNavController.reset()
+                    
                     subject.tableView(subject.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
                 }
                 
-                it("transitions the segue") {
-                    
+                it("transitions to the next view controller") {
+                    expect(mockNavController).to(invoke(MockUINavigationController.InvocationKeys.pushViewController))
                 }
                 
                 it("sets the view model item list") {
+                    let pushedVC: MenuItemsTableViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
                     
+                    expect(pushedVC?.viewModel.menuItems).to(equal(expectedItemList))
                 }
             }
             

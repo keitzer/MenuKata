@@ -23,4 +23,14 @@ class MenuItemsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController {
+            
+            viewController.item = viewModel.menuItems[indexPath.row]
+            
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }

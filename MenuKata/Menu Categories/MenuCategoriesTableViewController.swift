@@ -41,4 +41,14 @@ class MenuCategoriesTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MenuItemsTableViewController") as? MenuItemsTableViewController {
+        
+            viewController.viewModel.menuItems = viewModel.categories[indexPath.row].menuItems
+        
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }

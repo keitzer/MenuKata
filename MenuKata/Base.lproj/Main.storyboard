@@ -77,7 +77,7 @@
         <!--Title-->
         <scene sceneID="1U8-ET-8np">
             <objects>
-                <viewController id="sEu-Dh-rqo" customClass="ProductViewController" customModule="MenuKata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductViewController" id="sEu-Dh-rqo" customClass="ProductViewController" customModule="MenuKata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvA-vo-ryf"/>
                         <viewControllerLayoutGuide type="bottom" id="Vl3-KZ-Dm5"/>

@@ -19,6 +19,10 @@ class GlobalAPIClient: APIClient {
     static let shared = GlobalAPIClient()
     
     func loadCategories(withSuccess successBlock: ([MenuCategory]) -> Void, withFail failBlock: (String) -> Void) {
+        let list: [MenuCategory] = [
+            MenuCategory(categoryName: "", menuItems: [])
+        ]
         
+        successBlock(list)
     }
 }

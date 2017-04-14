@@ -15,11 +15,12 @@ class MenuItemsTableViewControllerTests: QuickSpec {
     override func spec() {
         describe("MenuItemsTableViewController") {
             var subject: MenuItemsTableViewController!
+            var mockNavController: MockUINavigationController!
             
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 subject = storyboard.instantiateViewController(withIdentifier: "MenuItemsTableViewController") as? MenuItemsTableViewController
-                _ = UINavigationController(rootViewController: subject)
+                mockNavController = MockUINavigationController(rootViewController: subject)
             }
             
             describe("number of rows in section") {
@@ -54,22 +55,28 @@ class MenuItemsTableViewControllerTests: QuickSpec {
             }
             
             describe("tapped cell") {
+                var itemList: [MenuItem]!
                 beforeEach {
-                    let expectedItemList = [
+                    itemList = [
                         MenuItem(itemName: "Name1", imageName: "Image1", price: 1),
                         MenuItem(itemName: "Name2", imageName: "Image2", price: 2)
                     ]
-                    subject.viewModel.menuItems = expectedItemList
+                    subject.viewModel.menuItems = itemList
                     
-                    subject.tableView(subject.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+                    _ = subject.view
+                    mockNavController.reset()
+                    
+                    subject.tableView(subject.tableView, didSelectRowAt: IndexPath(row: 1, section: 0))
                 }
                 
-                it("transitions the segue") {
-                    
+                it("transitions to the product page") {
+                    expect(mockNavController).to(invoke(MockUINavigationController.InvocationKeys.pushViewController))
                 }
                 
-                it("sets the view model item list") {
+                it("sets the proper item from the list to the view model item") {
+                    let pushedVC: ProductViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
                     
+                    expect(pushedVC?.item).to(equal(itemList[1]))
                 }
             }
         }
