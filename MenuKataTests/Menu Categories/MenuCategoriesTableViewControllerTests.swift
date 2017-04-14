@@ -21,11 +21,16 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 subject = storyboard.instantiateViewController(withIdentifier: "MenuCategoriesTableViewController") as? MenuCategoriesTableViewController
+                _ = UINavigationController(rootViewController: subject)
                 
                 mockIndicator = MockProgressIndicator()
                 subject.progressIndicator = mockIndicator
                 mockViewModel = MockMenuCategoriesViewModel()
                 subject.viewModel = mockViewModel
+            }
+            
+            it("has the navigation title set to Categories") {
+                expect(subject.navigationItem.title).to(equal("Categories"))
             }
             
             it("uses the global progress indicator") {
@@ -79,6 +84,29 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                 }
             }
             
+            describe("tapped cell") {
+                var expectedItemList: [MenuItem]!
+                beforeEach {
+                    expectedItemList = [
+                        MenuItem(itemName: "Name1", imageName: "Image1", price: 1),
+                        MenuItem(itemName: "Name2", imageName: "Image2", price: 2)
+                    ]
+                    subject.viewModel.categories = [
+                        MenuCategory(categoryName: "", menuItems: expectedItemList)
+                    ]
+                    
+                    subject.tableView(subject.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+                }
+                
+                it("transitions the segue") {
+                    
+                }
+                
+                it("sets the view model item list") {
+                    
+                }
+            }
+            
             describe("menu categories loaded successfully") {
                 var mockTableView: MockUITableView!
                 beforeEach {
@@ -118,7 +146,7 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                 }
                 
                 it("does something with the failure message") {
-                    
+                    // ???
                 }
             }
         }
