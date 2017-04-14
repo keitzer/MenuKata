@@ -44,6 +44,38 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                     expect(mockViewModel).to(invoke(MockMenuCategoriesViewModel.InvocationKeys.loadCategories))
                 }
             }
+            
+            describe("number of rows in section") {
+                it("returns the number of menu categories that the view model contains") {
+                    subject.viewModel.categories = [
+                        MenuCategory(categoryName: "", imageName: ""),
+                        MenuCategory(categoryName: "", imageName: ""),
+                        MenuCategory(categoryName: "", imageName: "")
+                    ]
+                    
+                    let count = subject.tableView(subject.tableView, numberOfRowsInSection: 0)
+                    
+                    expect(count).to(equal(3))
+                }
+            }
+            
+            describe("cell for row at index path") {
+                it("sets the text label equal to the respective menu item's category name") {
+                    let expectedCell1Text = "Name 1"
+                    let expectedCell2Text = "Other Name"
+                    
+                    subject.viewModel.categories = [
+                        MenuCategory(categoryName: expectedCell1Text, imageName: ""),
+                        MenuCategory(categoryName: expectedCell2Text, imageName: "")
+                    ]
+                    
+                    let cell1 = subject.tableView(subject.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+                    let cell2 = subject.tableView(subject.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+                    
+                    expect(cell1.textLabel?.text).to(equal(expectedCell1Text))
+                    expect(cell2.textLabel?.text).to(equal(expectedCell2Text))
+                }
+            }
         }
     }
 }
