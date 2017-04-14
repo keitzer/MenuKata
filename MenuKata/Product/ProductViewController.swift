@@ -20,7 +20,7 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "")
+        let url = URL(string: "https://raw.githubusercontent.com/keitzer/MenuKataData/master/\(item?.imageName ?? "")")
         imageView.kf.setImage(with: url)
         itemNameLabel.text = item?.itemName
         itemPriceLabel.text = "$\(item?.price ?? 0)"
