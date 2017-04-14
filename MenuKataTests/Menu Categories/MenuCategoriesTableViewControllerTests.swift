@@ -107,7 +107,7 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                         MenuItem(itemName: "Name2", imageName: "Image2", price: 2)
                     ]
                     subject.viewModel.categories = [
-                        MenuCategory(categoryName: "", menuItems: expectedItemList)
+                        MenuCategory(categoryName: "CatName", menuItems: expectedItemList)
                     ]
                     
                     _ = subject.view
@@ -129,7 +129,7 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                 it("sets the title of the nav item to the name of the currently selected category") {
                     let pushedVC: MenuItemsTableViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
                     
-                    expect(pushedVC?.navigationItem.title).to(equal("Name1"))
+                    expect(pushedVC?.navigationItem.title).to(equal("CatName"))
                 }
             }
             
