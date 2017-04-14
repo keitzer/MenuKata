@@ -9,10 +9,15 @@
 import Foundation
 import SVProgressHUD
 
-class ProgressIndicator {
+protocol ProgressIndicator {
+    func show(with status: String)
+    func dismiss()
+}
+
+class GlobalProgressIndicator: ProgressIndicator {
     private init() {}
     
-    static let shared = ProgressIndicator()
+    static let shared = GlobalProgressIndicator()
     
     func show(with status: String) {
         SVProgressHUD.show(withStatus: status)

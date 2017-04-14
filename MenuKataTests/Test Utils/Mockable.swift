@@ -27,6 +27,10 @@ public extension Mockable {
         }
     }
     
+    func record(invocation name: String) {
+        record(invocation: name, with: nil)
+    }
+    
     func record(invocation name: String, with parameters: Any?...) {
         let newInvocation = Invocation(name: name, params: parameters)
         mockDataContainer.invocationArray.append(newInvocation)

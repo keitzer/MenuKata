@@ -12,6 +12,7 @@ import SVProgressHUD
 class MenuCategoriesTableViewController: UITableViewController {
     
     var viewModel = MenuCategoriesViewModel()
+    var progressIndicator: ProgressIndicator = GlobalProgressIndicator.shared
     
     override func viewDidLoad() {
          super.viewDidLoad()

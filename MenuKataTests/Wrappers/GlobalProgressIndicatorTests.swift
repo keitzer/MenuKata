@@ -12,19 +12,19 @@ import Nimble
 import SVProgressHUD
 @testable import MenuKata
 
-class SVProgressHUDWrapperTests: QuickSpec {
+class GlobalProgressIndicatorTests: QuickSpec {
     override func spec() {
         describe("SVProgressHUD Wrapper") {
             
             it("only creates one instance") {
-                let someInstance = ProgressIndicator.shared
-                let otherInstance = ProgressIndicator.shared
+                let someInstance = GlobalProgressIndicator.shared
+                let otherInstance = GlobalProgressIndicator.shared
                 
                 expect(someInstance).to(beIdenticalTo(otherInstance))
             }
             
             it("showWithStatus shows the progress HUD") {
-                ProgressIndicator.shared.show(with: "Some status")
+                GlobalProgressIndicator.shared.show(with: "Some status")
                 
                 expect(SVProgressHUD.isVisible()).toEventually(beTrue())
             }
@@ -32,7 +32,7 @@ class SVProgressHUDWrapperTests: QuickSpec {
             it("dismiss hides the progress HUD") {
                 SVProgressHUD.show(withStatus: "Some status")
                 
-                ProgressIndicator.shared.dismiss()
+                GlobalProgressIndicator.shared.dismiss()
                 
                 expect(SVProgressHUD.isVisible()).toEventually(beFalse())
             }

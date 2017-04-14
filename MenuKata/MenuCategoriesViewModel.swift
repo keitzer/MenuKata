@@ -10,4 +10,8 @@ import Foundation
 
 class MenuCategoriesViewModel {
     var categories = [MenuCategory]()
+    
+    func loadCategories() {
+        
+    }
 }
