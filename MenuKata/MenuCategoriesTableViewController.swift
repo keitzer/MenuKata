@@ -17,7 +17,8 @@ class MenuCategoriesTableViewController: UITableViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
         
-        SVProgressHUD.show(withStatus: "Loading Categories")
+        progressIndicator.show(with: "Loading Categories")
+        viewModel.loadCategories()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

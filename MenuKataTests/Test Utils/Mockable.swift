@@ -41,6 +41,10 @@ public extension Mockable {
     }
     
     func parameters(for name: String, atInvocationIndex invocationIndex: Int = 0) -> [Any?]? {
+        if invocationIndex >= mockDataContainer.invocationArray.count || invocationIndex < 0 {
+            return nil
+        }
+        
         return mockDataContainer.invocationArray[invocationIndex].params
         
     }

@@ -12,7 +12,7 @@
         <!--Menu Categories Table View Controller-->
         <scene sceneID="agJ-9n-sgs">
             <objects>
-                <tableViewController id="VyU-cf-ROw" customClass="MenuCategoriesTableViewController" customModule="MenuKata" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuCategoriesTableViewController" id="VyU-cf-ROw" customClass="MenuCategoriesTableViewController" customModule="MenuKata" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fgh-2r-pMZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
