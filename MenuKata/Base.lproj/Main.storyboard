@@ -77,7 +77,7 @@
         <!--Title-->
         <scene sceneID="1U8-ET-8np">
             <objects>
-                <viewController id="sEu-Dh-rqo" sceneMemberID="viewController">
+                <viewController id="sEu-Dh-rqo" customClass="ProductViewController" customModule="MenuKata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvA-vo-ryf"/>
                         <viewControllerLayoutGuide type="bottom" id="Vl3-KZ-Dm5"/>
@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84m-bD-69c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84m-bD-69c">
                                 <rect key="frame" x="68" y="98" width="239" height="127.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="84m-bD-69c" secondAttribute="height" multiplier="15:8" id="BD8-zU-CW8"/>
@@ -120,6 +120,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="w1P-S3-zAD"/>
+                    <connections>
+                        <outlet property="imageView" destination="84m-bD-69c" id="jEh-HW-LJY"/>
+                        <outlet property="itemNameLabel" destination="5SC-qG-WA4" id="WYJ-6O-vIn"/>
+                        <outlet property="itemPriceLabel" destination="5KA-ep-GHE" id="oUU-Kw-FT4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mft-JU-iFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

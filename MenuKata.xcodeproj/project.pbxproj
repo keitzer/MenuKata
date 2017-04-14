@@ -29,6 +29,7 @@
 		FEBD18591EA0860700EF9580 /* MenuCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18551EA0860700EF9580 /* MenuCategoryTests.swift */; };
 		FEBD185A1EA0860700EF9580 /* MenuItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18561EA0860700EF9580 /* MenuItemTests.swift */; };
 		FEBD185C1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD185B1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift */; };
+		FEBD18601EA088A400EF9580 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD185F1EA088A300EF9580 /* ProductViewController.swift */; };
 		FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DB1EA068880041CAAE /* AppDelegate.swift */; };
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
 		FEC846E31EA068880041CAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC846E21EA068880041CAAE /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		FEBD18551EA0860700EF9580 /* MenuCategoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategoryTests.swift; sourceTree = "<group>"; };
 		FEBD18561EA0860700EF9580 /* MenuItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTests.swift; sourceTree = "<group>"; };
 		FEBD185B1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		FEBD185F1EA088A300EF9580 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		FEC846D81EA068880041CAAE /* MenuKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC846DB1EA068880041CAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC846E01EA068880041CAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		FEBD184D1EA0856700EF9580 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD185F1EA088A300EF9580 /* ProductViewController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				FEBD18351EA078C300EF9580 /* MenuCategoriesViewModel.swift in Sources */,
 				FEBD184E1EA0856700EF9580 /* MenuCategory.swift in Sources */,
 				FEBD183A1EA0790B00EF9580 /* APIClient.swift in Sources */,
+				FEBD18601EA088A400EF9580 /* ProductViewController.swift in Sources */,
 				FEBD18511EA0858900EF9580 /* MenuItemsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
