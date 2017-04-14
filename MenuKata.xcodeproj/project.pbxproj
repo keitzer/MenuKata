@@ -14,7 +14,6 @@
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
 		FEC846E31EA068880041CAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC846E21EA068880041CAAE /* Assets.xcassets */; };
 		FEC846E61EA068880041CAAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846E41EA068880041CAAE /* LaunchScreen.storyboard */; };
-		FEC846F11EA068880041CAAE /* MenuKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846F01EA068880041CAAE /* MenuKataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +41,6 @@
 		FEC846E51EA068880041CAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC846E71EA068880041CAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC846EC1EA068880041CAAE /* MenuKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEC846F01EA068880041CAAE /* MenuKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuKataTests.swift; sourceTree = "<group>"; };
 		FEC846F21EA068880041CAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +120,6 @@
 		FEC846EF1EA068880041CAAE /* MenuKataTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEC846F01EA068880041CAAE /* MenuKataTests.swift */,
 				FEC846F21EA068880041CAAE /* Info.plist */,
 			);
 			path = MenuKataTests;
@@ -245,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1A0EC2C3826EB2E3734EB69E /* [CP] Copy Pods Resources */ = {
@@ -290,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		30EA668AFE74740C4293E760 /* [CP] Embed Pods Frameworks */ = {
@@ -339,7 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC846F11EA068880041CAAE /* MenuKataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +539,7 @@
 				FEC846F71EA068880041CAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEC846F81EA068880041CAAE /* Build configuration list for PBXNativeTarget "MenuKataTests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +548,7 @@
 				FEC846FA1EA068880041CAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
