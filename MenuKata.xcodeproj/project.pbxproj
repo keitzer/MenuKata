@@ -13,6 +13,8 @@
 		FEBD180A1EA06C0A00EF9580 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18091EA06C0A00EF9580 /* MenuCategory.swift */; };
 		FEBD180F1EA06D8F00EF9580 /* ProgressIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */; };
 		FEBD18111EA06E5400EF9580 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18101EA06E5400EF9580 /* ProgressIndicator.swift */; };
+		FEBD18131EA06F5000EF9580 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18121EA06F5000EF9580 /* Mockable.swift */; };
+		FEBD18171EA06F7600EF9580 /* MockMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18161EA06F7600EF9580 /* MockMatchers.swift */; };
 		FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DB1EA068880041CAAE /* AppDelegate.swift */; };
 		FEC846DE1EA068880041CAAE /* MenuCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DD1EA068880041CAAE /* MenuCategoriesTableViewController.swift */; };
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		FEBD180B1EA06CC200EF9580 /* MenuKataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MenuKataTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorTests.swift; sourceTree = "<group>"; };
 		FEBD18101EA06E5400EF9580 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		FEBD18121EA06F5000EF9580 /* Mockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		FEBD18161EA06F7600EF9580 /* MockMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMatchers.swift; sourceTree = "<group>"; };
 		FEC846D81EA068880041CAAE /* MenuKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC846DB1EA068880041CAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC846DD1EA068880041CAAE /* MenuCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			children = (
 				FEC846F21EA068880041CAAE /* Info.plist */,
 				FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */,
+				FEBD18121EA06F5000EF9580 /* Mockable.swift */,
+				FEBD18161EA06F7600EF9580 /* MockMatchers.swift */,
 				FEBD180B1EA06CC200EF9580 /* MenuKataTests-Bridging-Header.h */,
 			);
 			path = MenuKataTests;
@@ -354,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBD18131EA06F5000EF9580 /* Mockable.swift in Sources */,
+				FEBD18171EA06F7600EF9580 /* MockMatchers.swift in Sources */,
 				FEBD180F1EA06D8F00EF9580 /* ProgressIndicatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
