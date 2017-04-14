@@ -1,5 +1,5 @@
 //
-//  MockMenuCategoriesViewModel.swift
+//  MockAPIClient.swift
 //  MenuKata
 //
 //  Created by Alex Ogorek on 4/13/17.
@@ -9,14 +9,14 @@
 import Foundation
 @testable import MenuKata
 
-class MockMenuCategoriesViewModel: MenuCategoriesViewModel, Mockable {
+class MockAPIClient: APIClient, Mockable {
     var mockDataContainer = MockDataContainer()
     
     struct InvocationKeys {
         static let loadCategories = "loadCategories"
     }
     
-    override func loadCategories(withSuccess successBlock: @escaping () -> Void, withFail failBlock: (String) -> Void) {
+    func loadCategories(withSuccess successBlock: ([MenuCategory]) -> Void, withFail failBlock: (String) -> Void) {
         record(invocation: InvocationKeys.loadCategories, with: successBlock, failBlock)
     }
 }

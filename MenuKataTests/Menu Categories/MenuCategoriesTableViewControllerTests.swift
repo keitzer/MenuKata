@@ -76,6 +76,48 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                     expect(cell2.textLabel?.text).to(equal(expectedCell2Text))
                 }
             }
+            
+            describe("menu categories loaded successfully") {
+                beforeEach {
+                    let mockViewModel = MockMenuCategoriesViewModel()
+                    subject.viewModel = mockViewModel
+                    
+                    _ = subject.view
+                    
+                    let successBlock: (()->Void)? = mockViewModel.parameter(for: MockMenuCategoriesViewModel.InvocationKeys.loadCategories, atParameterIndex: 0)
+                    
+                    successBlock?()
+                }
+                
+                it("dismisses the progress indicator") {
+                    
+                }
+                
+                it("reloads the table view") {
+                    
+                }
+            }
+            
+            describe("menu categories load failed") {
+                beforeEach {
+                    let mockViewModel = MockMenuCategoriesViewModel()
+                    subject.viewModel = mockViewModel
+                    
+                    _ = subject.view
+                    
+                    let failBlock: ((String)->Void)? = mockViewModel.parameter(for: MockMenuCategoriesViewModel.InvocationKeys.loadCategories, atParameterIndex: 1)
+                    
+                    failBlock?("Message")
+                }
+                
+                it("dismisses the progress indicator") {
+                    
+                }
+                
+                it("does something with the failure message") {
+                    
+                }
+            }
         }
     }
 }

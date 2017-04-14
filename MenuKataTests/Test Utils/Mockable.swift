@@ -49,7 +49,7 @@ public extension Mockable {
         
     }
     
-    func parameter<T>(for name: String, atInvocationIndex invocationIndex: Int, atParameterIndex parameterIndex: Int) -> T? {
+    func parameter<T>(for name: String, atInvocationIndex invocationIndex: Int = 0, atParameterIndex parameterIndex: Int = 0) -> T? {
         return parameters(for: name, atInvocationIndex: invocationIndex)?[parameterIndex] as? T
     }
     

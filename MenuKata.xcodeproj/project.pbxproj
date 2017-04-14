@@ -19,6 +19,9 @@
 		FEBD18351EA078C300EF9580 /* MenuCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18301EA078C300EF9580 /* MenuCategoriesViewModel.swift */; };
 		FEBD18361EA078C300EF9580 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18311EA078C300EF9580 /* MenuCategory.swift */; };
 		FEBD18371EA078C300EF9580 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18331EA078C300EF9580 /* ProgressIndicator.swift */; };
+		FEBD183A1EA0790B00EF9580 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18391EA0790B00EF9580 /* APIClient.swift */; };
+		FEBD183E1EA0799E00EF9580 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD183D1EA0799E00EF9580 /* MockAPIClient.swift */; };
+		FEBD18401EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD183F1EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift */; };
 		FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DB1EA068880041CAAE /* AppDelegate.swift */; };
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
 		FEC846E31EA068880041CAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC846E21EA068880041CAAE /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		FEBD18301EA078C300EF9580 /* MenuCategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategoriesViewModel.swift; sourceTree = "<group>"; };
 		FEBD18311EA078C300EF9580 /* MenuCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 		FEBD18331EA078C300EF9580 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		FEBD18391EA0790B00EF9580 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FEBD183D1EA0799E00EF9580 /* MockAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		FEBD183F1EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategoriesViewModelTests.swift; sourceTree = "<group>"; };
 		FEC846D81EA068880041CAAE /* MenuKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC846DB1EA068880041CAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC846E01EA068880041CAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBD181F1EA0771300EF9580 /* MenuCategoriesTableViewControllerTests.swift */,
+				FEBD183F1EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift */,
 			);
 			path = "Menu Categories";
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBD18211EA0771300EF9580 /* MockMenuCategoriesViewModel.swift */,
+				FEBD183D1EA0799E00EF9580 /* MockAPIClient.swift */,
 				FEBD18221EA0771300EF9580 /* MockProgressIndicator.swift */,
 			);
 			path = Mocks;
@@ -158,6 +166,7 @@
 		FEBD18381EA078CC00EF9580 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD18391EA0790B00EF9580 /* APIClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -418,6 +427,7 @@
 				FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */,
 				FEBD18371EA078C300EF9580 /* ProgressIndicator.swift in Sources */,
 				FEBD18351EA078C300EF9580 /* MenuCategoriesViewModel.swift in Sources */,
+				FEBD183A1EA0790B00EF9580 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +438,8 @@
 				FEBD18281EA0771300EF9580 /* MenuCategoriesTableViewControllerTests.swift in Sources */,
 				FEBD182D1EA0771300EF9580 /* GlobalProgressIndicatorTests.swift in Sources */,
 				FEBD182C1EA0771300EF9580 /* MockMatchers.swift in Sources */,
+				FEBD18401EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift in Sources */,
+				FEBD183E1EA0799E00EF9580 /* MockAPIClient.swift in Sources */,
 				FEBD182A1EA0771300EF9580 /* MockProgressIndicator.swift in Sources */,
 				FEBD18291EA0771300EF9580 /* MockMenuCategoriesViewModel.swift in Sources */,
 				FEBD182B1EA0771300EF9580 /* Mockable.swift in Sources */,
