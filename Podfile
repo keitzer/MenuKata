@@ -6,6 +6,7 @@ target 'MenuKata' do
   use_frameworks!
   # Pods for MenuKata
   pod 'Alamofire'
+  pod 'SVProgressHUD'
 
   target 'MenuKataTests' do
     inherit! :search_paths
