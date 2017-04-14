@@ -11,6 +11,8 @@
 		7964F5C10E6CBE827239314D /* Pods_MenuKataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371D2D83B1C2B30979F39137 /* Pods_MenuKataTests.framework */; };
 		FEBD18081EA06BEB00EF9580 /* MenuCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18071EA06BEB00EF9580 /* MenuCategoriesViewModel.swift */; };
 		FEBD180A1EA06C0A00EF9580 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18091EA06C0A00EF9580 /* MenuCategory.swift */; };
+		FEBD180F1EA06D8F00EF9580 /* ProgressIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */; };
+		FEBD18111EA06E5400EF9580 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18101EA06E5400EF9580 /* ProgressIndicator.swift */; };
 		FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DB1EA068880041CAAE /* AppDelegate.swift */; };
 		FEC846DE1EA068880041CAAE /* MenuCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DD1EA068880041CAAE /* MenuCategoriesTableViewController.swift */; };
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
@@ -37,6 +39,9 @@
 		E1E8D4D2397E937DB00F9180 /* Pods-MenuKata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuKata.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenuKata/Pods-MenuKata.release.xcconfig"; sourceTree = "<group>"; };
 		FEBD18071EA06BEB00EF9580 /* MenuCategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategoriesViewModel.swift; sourceTree = "<group>"; };
 		FEBD18091EA06C0A00EF9580 /* MenuCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
+		FEBD180B1EA06CC200EF9580 /* MenuKataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MenuKataTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorTests.swift; sourceTree = "<group>"; };
+		FEBD18101EA06E5400EF9580 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		FEC846D81EA068880041CAAE /* MenuKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC846DB1EA068880041CAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC846DD1EA068880041CAAE /* MenuCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 				FEC846DD1EA068880041CAAE /* MenuCategoriesTableViewController.swift */,
 				FEBD18071EA06BEB00EF9580 /* MenuCategoriesViewModel.swift */,
 				FEBD18091EA06C0A00EF9580 /* MenuCategory.swift */,
+				FEBD18101EA06E5400EF9580 /* ProgressIndicator.swift */,
 				FEC846DF1EA068880041CAAE /* Main.storyboard */,
 				FEC846E21EA068880041CAAE /* Assets.xcassets */,
 				FEC846E41EA068880041CAAE /* LaunchScreen.storyboard */,
@@ -127,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				FEC846F21EA068880041CAAE /* Info.plist */,
+				FEBD180E1EA06D8F00EF9580 /* ProgressIndicatorTests.swift */,
+				FEBD180B1EA06CC200EF9580 /* MenuKataTests-Bridging-Header.h */,
 			);
 			path = MenuKataTests;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 					};
 					FEC846EB1EA068880041CAAE = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FEC846D71EA068880041CAAE;
 					};
@@ -336,6 +345,7 @@
 				FEBD180A1EA06C0A00EF9580 /* MenuCategory.swift in Sources */,
 				FEC846DE1EA068880041CAAE /* MenuCategoriesTableViewController.swift in Sources */,
 				FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */,
+				FEBD18111EA06E5400EF9580 /* ProgressIndicator.swift in Sources */,
 				FEBD18081EA06BEB00EF9580 /* MenuCategoriesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBD180F1EA06D8F00EF9580 /* ProgressIndicatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,10 +515,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MenuKataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kata.MenuKataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MenuKataTests/MenuKataTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuKata.app/MenuKata";
 			};
@@ -519,10 +533,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MenuKataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kata.MenuKataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MenuKataTests/MenuKataTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuKata.app/MenuKata";
 			};
