@@ -28,7 +28,9 @@ class MenuItemsTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController {
             
-            viewController.item = viewModel.menuItems[indexPath.row]
+            let item = viewModel.menuItems[indexPath.row]
+            viewController.item = item
+            viewController.navigationItem.title = item.itemName
             
             navigationController?.pushViewController(viewController, animated: true)
         }

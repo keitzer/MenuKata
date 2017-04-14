@@ -16,9 +16,8 @@ class MenuCategoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
          super.viewDidLoad()
-        
-        progressIndicator.show(with: "Loading Menu")
-        viewModel.loadCategories(withSuccess: categoriesLoaded, withFail: categoriesFailed)
+    
+        refreshPressed()
     }
     
     private func categoriesLoaded() {
@@ -28,6 +27,11 @@ class MenuCategoriesTableViewController: UITableViewController {
     
     private func categoriesFailed(withMessage message: String) {
         progressIndicator.dismiss()
+    }
+    
+    @IBAction func refreshPressed() {
+        progressIndicator.show(with: "Loading Menu")
+        viewModel.loadCategories(withSuccess: categoriesLoaded, withFail: categoriesFailed)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +50,7 @@ class MenuCategoriesTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "MenuItemsTableViewController") as? MenuItemsTableViewController {
         
+            viewController.navigationItem.title = viewModel.categories[indexPath.row].categoryName
             viewController.viewModel.menuItems = viewModel.categories[indexPath.row].menuItems
         
             navigationController?.pushViewController(viewController, animated: true)

@@ -23,4 +23,30 @@ struct MenuCategory: Equatable {
 
     var categoryName: String
     var menuItems: [MenuItem]
+    
+    init(categoryName: String, menuItems: [MenuItem]) {
+        self.categoryName = categoryName
+        self.menuItems = menuItems
+    }
+    
+    init?(fromDict dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String, let list = dictionary["items"] as? [[String: Any]] else {
+            return nil
+        }
+        
+        self.categoryName = name
+        self.menuItems = MenuItem.getItems(fromArray: list)
+    }
+    
+    static func getCategories(fromArray list: [[String: Any]]) -> [MenuCategory] {
+        var newList = [MenuCategory]()
+        
+        for item in list {
+            if let newItem = MenuCategory(fromDict: item) {
+                newList.append(newItem)
+            }
+        }
+        
+        return newList
+    }
 }

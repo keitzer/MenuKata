@@ -56,6 +56,21 @@ class MenuCategoryTests: QuickSpec {
                 
                 expect(item1).notTo(equal(item2))
             }
+            
+            it("can be loaded from dictionary") {
+                let item = MenuCategory(fromDict: [
+                    "name" : "Something",
+                    "items": [
+                        [
+                            "name" : "some name",
+                            "image" : "some image",
+                            "price": 2
+                        ]
+                    ]
+                ])
+                
+                expect(item).notTo(beNil())
+            }
         }
     }
 }

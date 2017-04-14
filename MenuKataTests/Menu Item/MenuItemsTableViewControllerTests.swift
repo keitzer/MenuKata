@@ -78,6 +78,12 @@ class MenuItemsTableViewControllerTests: QuickSpec {
                     
                     expect(pushedVC?.item).to(equal(itemList[1]))
                 }
+                
+                it("sets the title of the nav item to the name of the currently selected item") {
+                    let pushedVC: ProductViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
+                    
+                    expect(pushedVC?.navigationItem.title).to(equal("Name2"))
+                }
             }
         }
     }

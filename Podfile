@@ -7,6 +7,7 @@ target 'MenuKata' do
   # Pods for MenuKata
   pod 'Alamofire'
   pod 'SVProgressHUD'
+  pod 'Kingfisher'
 
   target 'MenuKataTests' do
     inherit! :search_paths

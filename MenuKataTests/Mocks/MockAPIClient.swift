@@ -16,7 +16,7 @@ class MockAPIClient: APIClient, Mockable {
         static let loadCategories = "loadCategories"
     }
     
-    func loadCategories(withSuccess successBlock: ([MenuCategory]) -> Void, withFail failBlock: (String) -> Void) {
+    func loadCategories(withSuccess successBlock: @escaping ([MenuCategory]) -> Void, withFail failBlock: @escaping (String) -> Void) {
         record(invocation: InvocationKeys.loadCategories, with: successBlock, failBlock)
     }
 }

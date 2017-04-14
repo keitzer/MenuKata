@@ -31,6 +31,7 @@
 		FEBD185C1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD185B1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift */; };
 		FEBD18601EA088A400EF9580 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD185F1EA088A300EF9580 /* ProductViewController.swift */; };
 		FEBD18621EA089E900EF9580 /* MockUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18611EA089E900EF9580 /* MockUINavigationController.swift */; };
+		FEBD18641EA08F3800EF9580 /* ProductViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD18631EA08F3800EF9580 /* ProductViewControllerTests.swift */; };
 		FEC846DC1EA068880041CAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC846DB1EA068880041CAAE /* AppDelegate.swift */; };
 		FEC846E11EA068880041CAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC846DF1EA068880041CAAE /* Main.storyboard */; };
 		FEC846E31EA068880041CAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC846E21EA068880041CAAE /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		FEBD185B1EA0862400EF9580 /* MenuItemsTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		FEBD185F1EA088A300EF9580 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		FEBD18611EA089E900EF9580 /* MockUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUINavigationController.swift; sourceTree = "<group>"; };
+		FEBD18631EA08F3800EF9580 /* ProductViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewControllerTests.swift; sourceTree = "<group>"; };
 		FEC846D81EA068880041CAAE /* MenuKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC846DB1EA068880041CAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC846E01EA068880041CAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		FEBD18581EA0860700EF9580 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD18631EA08F3800EF9580 /* ProductViewControllerTests.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				FEBD18401EA07A0400EF9580 /* MenuCategoriesViewModelTests.swift in Sources */,
 				FEBD18591EA0860700EF9580 /* MenuCategoryTests.swift in Sources */,
 				FEBD183E1EA0799E00EF9580 /* MockAPIClient.swift in Sources */,
+				FEBD18641EA08F3800EF9580 /* ProductViewControllerTests.swift in Sources */,
 				FEBD182A1EA0771300EF9580 /* MockProgressIndicator.swift in Sources */,
 				FEBD18621EA089E900EF9580 /* MockUINavigationController.swift in Sources */,
 				FEBD18291EA0771300EF9580 /* MockMenuCategoriesViewModel.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class ProductViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
@@ -18,5 +19,10 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url = URL(string: "")
+        imageView.kf.setImage(with: url)
+        itemNameLabel.text = item?.itemName
+        itemPriceLabel.text = "$\(item?.price ?? 0)"
     }
 }

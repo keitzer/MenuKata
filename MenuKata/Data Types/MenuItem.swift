@@ -27,4 +27,34 @@ struct MenuItem: Equatable {
     var itemName: String
     var imageName: String
     var price: Int
+    
+    init(itemName: String, imageName: String, price: Int) {
+        self.itemName = itemName
+        self.imageName = imageName
+        self.price = price
+    }
+    
+    init?(fromDict dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String,
+            let image = dictionary["image"] as? String,
+            let price = dictionary["price"] as? Int else {
+            return nil
+        }
+        
+        self.itemName = name
+        self.imageName = image
+        self.price = price
+    }
+    
+    static func getItems(fromArray list: [[String: Any]]) -> [MenuItem] {
+        var newList = [MenuItem]()
+        
+        for item in list {
+            if let newItem = MenuItem(fromDict: item) {
+                newList.append(newItem)
+            }
+        }
+        
+        return newList
+    }
 }

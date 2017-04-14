@@ -41,6 +41,16 @@ class MenuItemTests: QuickSpec {
                 
                 expect(item1).notTo(equal(item2))
             }
+            
+            it("can be loaded from dictionary") {
+                let item = MenuItem(fromDict: [
+                    "name" : "Value",
+                    "image" : "Image name",
+                    "price" :  5
+                ])
+                
+                expect(item).notTo(beNil())
+            }
         }
     }
 }

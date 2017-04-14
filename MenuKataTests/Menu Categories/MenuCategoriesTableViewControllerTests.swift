@@ -40,15 +40,29 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
             }
             
             describe("view did load") {
-                it("shows the progress indicator") {
+                beforeEach {
                     _ = subject.view
-                    
+                }
+                
+                it("shows the progress indicator") {
                     expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.showWithStatus, withParameter: "Loading Menu"))
                 }
                 
                 it("calls into the view model for making the Category call") {
-                    _ = subject.view
-                    
+                    expect(mockViewModel).to(invoke(MockMenuCategoriesViewModel.InvocationKeys.loadCategories))
+                }
+            }
+            
+            describe("refresh button pressed") {
+                beforeEach {
+                    subject.refreshPressed()
+                }
+                
+                it("shows the progress indicator") {
+                    expect(mockIndicator).to(invoke(MockProgressIndicator.InvocationKeys.showWithStatus, withParameter: "Loading Menu"))
+                }
+                
+                it("calls into the view model for making the Category call") {
                     expect(mockViewModel).to(invoke(MockMenuCategoriesViewModel.InvocationKeys.loadCategories))
                 }
             }
@@ -110,6 +124,12 @@ class MenuCategoriesTableViewControllerTests: QuickSpec {
                     let pushedVC: MenuItemsTableViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
                     
                     expect(pushedVC?.viewModel.menuItems).to(equal(expectedItemList))
+                }
+                
+                it("sets the title of the nav item to the name of the currently selected category") {
+                    let pushedVC: MenuItemsTableViewController? = mockNavController.parameter(for: MockUINavigationController.InvocationKeys.pushViewController, atParameterIndex: 0)
+                    
+                    expect(pushedVC?.navigationItem.title).to(equal("Name1"))
                 }
             }
             

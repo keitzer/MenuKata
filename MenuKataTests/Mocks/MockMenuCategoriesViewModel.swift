@@ -16,7 +16,7 @@ class MockMenuCategoriesViewModel: MenuCategoriesViewModel, Mockable {
         static let loadCategories = "loadCategories"
     }
     
-    override func loadCategories(withSuccess successBlock: @escaping () -> Void, withFail failBlock: (String) -> Void) {
+    override func loadCategories(withSuccess successBlock: @escaping () -> Void, withFail failBlock: @escaping (String) -> Void) {
         record(invocation: InvocationKeys.loadCategories, with: successBlock, failBlock)
     }
 }

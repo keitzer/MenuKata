@@ -13,7 +13,7 @@ class MenuCategoriesViewModel {
     var apiClient: APIClient = GlobalAPIClient.shared
     private var successBlock: (()->Void)!
     
-    func loadCategories(withSuccess successBlock: @escaping () -> Void, withFail failBlock: (String) -> Void) {
+    func loadCategories(withSuccess successBlock: @escaping () -> Void, withFail failBlock: @escaping (String) -> Void) {
         self.successBlock = successBlock
         apiClient.loadCategories(withSuccess: categoriesLoaded, withFail: failBlock)
     }
